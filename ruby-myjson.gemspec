@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ruby/myjson/version'
+require 'myjson/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'ruby-myjson'
-  spec.version       = Ruby::Myjson::VERSION
+  spec.version       = Myjson::VERSION
   spec.authors       = ['Nikita Chernov']
   spec.email         = ['nikita.cernovs@accenture.com']
 
