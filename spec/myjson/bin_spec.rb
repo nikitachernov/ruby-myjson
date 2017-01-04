@@ -48,16 +48,16 @@ module Myjson
     describe '#update' do
       let(:response) { bin.update(id, data) }
 
-      context 'when success', vcr: { cassette_name: 'bin-update-200' } do
-        let(:data) do
-          {
-            hello: 'world',
-            version: 2,
-            active: false,
-            tags: %w(foo bar)
-          }
-        end
+      let(:data) do
+        {
+          hello: 'world',
+          version: 2,
+          active: false,
+          tags: %w(foo bar)
+        }
+      end
 
+      context 'when success', vcr: { cassette_name: 'bin-update-200' } do
         it 'should return JSON' do
           expect(response).to eq(
             'hello' => 'world',
@@ -69,15 +69,6 @@ module Myjson
       end
 
       context 'when fail', vcr: { cassette_name: 'bin-update-404' } do
-        let(:data) do
-          {
-            hello: 'world',
-            version: 2,
-            active: false,
-            tags: %w(foo bar)
-          }
-        end
-
         it 'should be nil' do
           expect(response).to be_nil
         end
