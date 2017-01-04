@@ -19,7 +19,7 @@ module Myjson
         http.request(request)
       end
 
-      JSON.parse(response.body)
+      JSON.parse(response.body) if [200, 201].include?(response.code.to_i)
     end
 
     def get(path, id: nil)

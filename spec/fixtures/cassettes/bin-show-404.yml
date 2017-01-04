@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.myjson.com/bins/fakeid
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.myjson.com
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 404 Not Found
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - ec7fabf1-9bb8-4ade-9973-cb3dedddcf1c
+      X-Runtime:
+      - '0.003486'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
+      Date:
+      - Wed, 04 Jan 2017 16:30:49 GMT
+      Server:
+      - nginx/1.5.8 + Phusion Passenger 4.0.40
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+    body:
+      encoding: UTF-8
+      string: '{"status":404,"message":"Not Found"}'
+    http_version: 
+  recorded_at: Wed, 04 Jan 2017 16:31:54 GMT
+recorded_with: VCR 3.0.3

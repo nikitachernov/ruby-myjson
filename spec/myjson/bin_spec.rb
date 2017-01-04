@@ -8,7 +8,7 @@ module Myjson
     describe '#show' do
       let(:response) { bin.show(id) }
 
-      context 'when spam', vcr: { cassette_name: 'bin-show-200' } do
+      context 'when success', vcr: { cassette_name: 'bin-show-200' } do
         it 'should return JSON' do
           expect(response).to eq(
             'hello' => 'world',
@@ -16,6 +16,12 @@ module Myjson
             'active' => true,
             'tags' => %w(foo bar)
           )
+        end
+      end
+
+      context 'when fail', vcr: { cassette_name: 'bin-show-404' } do
+        it 'should be nil' do
+          expect(response).to be_nil
         end
       end
     end
@@ -59,6 +65,21 @@ module Myjson
             'active' => false,
             'tags' => %w(foo bar)
           )
+        end
+      end
+
+      context 'when fail', vcr: { cassette_name: 'bin-update-404' } do
+        let(:data) do
+          {
+            hello: 'world',
+            version: 2,
+            active: false,
+            tags: %w(foo bar)
+          }
+        end
+
+        it 'should be nil' do
+          expect(response).to be_nil
         end
       end
     end
