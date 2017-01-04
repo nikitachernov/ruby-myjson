@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Myjson Ruby Client'
   spec.description   = 'Ruby client for Myjson http://myjson.com'
-  spec.homepage      = 'https://github.com/nikitachernov/ruby-plino'
+  spec.homepage      = 'https://github.com/nikitachernov/ruby-myjson'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
