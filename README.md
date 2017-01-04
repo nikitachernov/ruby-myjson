@@ -22,13 +22,36 @@ Or install it yourself as:
 
 ### Myjson client
 
-```
+```Ruby
 bin = Myjson::Bin.new
 bin.show(id) # { 'hello' => 'world' }
 
 bin.create(hello: 'world') # { 'uri' => 'https://api.myjson.com/bins/:id' }
 
 bin.update(id, hello: 'world') # { 'hello' => 'world' }
+```
+
+### Myjson resource
+
+```Ruby
+require 'myjson/resource'
+
+class MyKlass
+  include Myjson::Resource
+  
+  myjson_attribute :name, String
+  myjson_attribute :age, Integer
+end
+
+my_instance = MyKlass.new
+my_instance.name = 'Jhon'
+my_instance.save # create new record
+
+id = my_instance.id
+my_instance = MyKlass.find(id)
+
+my_instance.age = 28
+my_instance.save # update existing record
 ```
 
 ## Development
