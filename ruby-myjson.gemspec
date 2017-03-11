@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'ruby-myjson'
   spec.version       = Myjson::VERSION
   spec.authors       = ['Nikita Chernov']
-  spec.email         = ['nikita.cernovs@accenture.com']
+  spec.email         = ['nikita.cernovs@gmail.com']
 
   spec.summary       = 'Myjson Ruby Client'
   spec.description   = 'Ruby client for Myjson http://myjson.com'
